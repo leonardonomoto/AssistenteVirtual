@@ -14,4 +14,5 @@ def main():
     desligar()
 
 
-main() 
+os.system('shutdown -s')
+print('Desligando')
