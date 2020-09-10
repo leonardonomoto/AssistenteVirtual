@@ -6,5 +6,7 @@ def desligarPC():
 def reiniciarPC():
     os.system('shutdown /r /t 0')
 
-def hibernar():
+def hibernarPC():
     os.system('shutdown /h')
+
+reiniciarPC()
