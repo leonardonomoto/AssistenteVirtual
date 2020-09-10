@@ -6,7 +6,7 @@ def comando(cmd):
 def desligar():
     t = int(input('Quantos minutos para desligar?'))
     t = str(t*60)
-    cmd = 'shutdown -s -f -t' + (t)
+    cmd = 'shutdown -s'+(t)
     comando(cmd)
 
 
