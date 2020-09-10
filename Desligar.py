@@ -1,18 +1,10 @@
 import os
 
-def comando(cmd):
-    os.system(cmd)
+def desligarPC():
+    os.system('shutdown /s')
 
-def desligar():
-    t = int(input('Quantos minutos para desligar?'))
-    t = str(t*60)
-    cmd = 'shutdown -s'+(t)
-    comando(cmd)
+def reiniciarPC():
+    os.system('shutdown /r /t 0')
 
-
-def main():
-    desligar()
-
-
-os.system('shutdown -s')
-print('Desligando')
+def hibernar():
+    os.system('shutdown /h')
