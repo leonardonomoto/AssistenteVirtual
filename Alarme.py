@@ -1,13 +1,18 @@
-from time import localtime
-from pygame import mixer
+from chatterbot import ChatBot
+from chatterbot.trainers import ListTrainer
 
-H = int(input('Coloque a hora: '))
-M = int(input('Coloque os minutos: '))
+# Create a new chat bot named Charlie
+chatbot = ChatBot('Charlie')
 
-while True:
-    if localtime().tm_hour == int(H) and localtime().tm_min == int(M):
-        print('ACORDE')
-        mixer.init()
-        mixer.music.load('Som-alarme.mp3')
-        mixer.music.play()
-        break
+trainer = ListTrainer(chatbot)
+
+trainer.train([
+    "Hi, can I help you?",
+    "Sure, I'd like to book a flight to Iceland.",
+    "Your flight has been booked."
+])
+
+# Get a response to the input text 'I would like to book a flight.'
+response = chatbot.get_response('I would like to book a flight.')
+
+print(response)
